@@ -1,3 +1,11 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+cp -rfT .ssh/ $HOME/ | gpg --decrypt $HOME/.ssh/id_rsa.gpg
+
+sudo -v
+
 sudo pacman -Syyu --noconfirm
 
 sudo pacman -S --needed \
@@ -29,11 +37,12 @@ yay -S --needed \
 	swaylock-effects autotiling \
 	--noconfirm
 
-git clone --recursive git@github.com:viktorybloom/dotfiles.git $HOME
-./$HOME/.dotfiles/arch
+
+sudo rm -rf $HOME/.dotfiles
+git clone --recursive git@github.com:viktorybloom/dotfiles.git "$HOME/.dotfiles"
+"$HOME/.dotfiles/arch"
 
 sudo systemctl enable --now bluetooth docker.service containerd.service ufw fail2ban greetd
-
 
 sudo groupadd docker
 sudo usermod -aG docker $USER
