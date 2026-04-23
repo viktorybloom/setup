@@ -8,39 +8,34 @@ sudo -v
 
 sudo pacman -Syyu --noconfirm
 
-sudo pacman -S --needed \
+sudo pacman -S --needed --noconfirm \
 	nvim stow tmux ghostty fzf tldr wget xclip curl git tree ripgrep neofetch zsh \
 	base-devel cmake pkgconf docker docker-compose lua unzip libtool gettext htop \
 	ccache go lsof ninja python-pip moreutils clang less zig  \
-	platformio-core
-	# wm
+	platformio-core \
 	sway greetd swaybg dmenu wofi waybar \
-	# utilities
 	brightnessctl pavucontol grim slurp xorg-wayland bluez-utils dosfstools sshpass \
-	# audio
 	pulseaudio-alsa pulseaudio-bluetooth pulseaudio-equalizer pulseaudio-jackalsa-utils playerctl pacman-contrib \
-	# fonts
 	ttf-ubuntu-mono-nerd \
-	# security
-	ufw fail2ban
-	--noconfirm
+	ufw fail2ban 
 
 git-config --global user.name "viktorybloom" 
 git-config --global user.email "viktorsulejic@gmail.com"
 
+sudo rm -rf /tmp/yay
 sudo mkdir -p /tmp/yay
-sudo chmod 0777 /tmp/yay
+pushd /tmp/yay/
 git clone https://aur.archlinux.org/yay-git.git
 makepkg -si --noconfirm
+popd
 
-yay -S --needed \
-	swaylock-effects autotiling \
-	--noconfirm
+yay -S --needed --noconfirm \
+	swaylock-effects autotiling 
 
 
 sudo rm -rf $HOME/.dotfiles
 git clone --recursive git@github.com:viktorybloom/dotfiles.git "$HOME/.dotfiles"
-"$HOME/.dotfiles/arch"
+bash "$HOME/.dotfiles/arch"
 
 sudo systemctl enable --now bluetooth docker.service containerd.service ufw fail2ban greetd
 
