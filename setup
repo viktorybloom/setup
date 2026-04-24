@@ -32,7 +32,7 @@ sudo mkdir -p /tmp/yay
 sudo chown -R "$USER:$USER" /tmp/yay
 git clone https://aur.archlinux.org/yay-git.git /tmp/yay/yay-git
 pushd /tmp/yay/yay-git
-sudo makepkg -si --noconfirm
+makepkg -si --noconfirm
 popd
 
 yay -S --needed --noconfirm \
