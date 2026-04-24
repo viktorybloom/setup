@@ -20,7 +20,7 @@ sudo pacman -S --needed --noconfirm \
 	platformio-core \
 	sway greetd greetd-tuigreet swaybg dmenu wofi waybar \
 	brightnessctl pavucontrol grim slurp xorg-xwayland bluez-utils dosfstools sshpass \
-	pipewire pipewire-pulse wireplumber alsa-utils playerctl pacman-contrib \
+	pipewire pipewire-pulse wireplumber alsa-utils sof-firmware playerctl pacman-contrib \
 	ttf-ubuntu-mono-nerd \
 	ufw fail2ban 
 
@@ -71,7 +71,7 @@ sudo sysctl --system
 sudo groupadd docker
 sudo usermod -aG docker $USER
 
-sudo systemctl enable --now bluetooth docker.service containerd.service fail2ban greetd
+sudo systemctl enable --now bluetooth pipewire wireplumber pipewire-pulse docker.service containerd.service fail2ban greetd
 
 sudo systemctl disable --now systemd-networkd-wait-online.service #causing annoying boot bug
 
