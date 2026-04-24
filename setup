@@ -36,7 +36,7 @@ yay -S --needed --noconfirm \
 	swaylock-effects autotiling 
 
 sudo rm -rf "$HOME/.dotfiles"
-git clone --recursive git@github.com:viktorybloom/dotfiles.git "$HOME/.dotfiles"
+git clone --recursive git@github.com:viktorybloom/.dotfiles.git "$HOME/.dotfiles"
 bash "$HOME/.dotfiles/arch"
 
 # Harden this .....
