@@ -73,7 +73,6 @@ sudo usermod -aG docker $USER
 
 sudo systemctl enable --now bluetooth docker.service containerd.service fail2ban greetd
 
-newgrp docker
-
+sudo systemctl disable --now systemd-networkd-wait-online.service #causing annoying boot bug
 
 
