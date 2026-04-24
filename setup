@@ -20,7 +20,7 @@ sudo pacman -S --needed --noconfirm \
 	platformio-core \
 	sway greetd greetd-tuigreet swaybg dmenu wofi waybar \
 	brightnessctl pavucontrol grim slurp xorg-xwayland bluez-utils dosfstools sshpass \
-	pulseaudio-alsa pulseaudio-bluetooth pulseaudio-equalizer pulseaudio-jack alsa-utils playerctl pacman-contrib \
+	pipewire pipewire-pulse wireplumber alsa-utils playerctl pacman-contrib \
 	ttf-ubuntu-mono-nerd \
 	ufw fail2ban 
 
