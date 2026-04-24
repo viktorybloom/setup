@@ -36,7 +36,7 @@ makepkg -si --noconfirm
 popd
 
 yay -S --needed --noconfirm \
-	swaylock-effects autotiling zen-browser
+	swaylock-effects autotiling zen-browser-bin
 
 sudo tee /etc/greetd/config.toml >/dev/null <<EOF
 [terminal]
