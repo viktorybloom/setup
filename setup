@@ -68,10 +68,12 @@ EOF
 
 sudo sysctl --system
 
+sudo groupadd docker
+sudo usermod -aG docker $USER
+
 sudo systemctl enable --now bluetooth docker.service containerd.service fail2ban greetd
 
-
-sudo groupadd -f docker
-sudo usermod -aG docker "$USER"
 newgrp docker
+
+
 
