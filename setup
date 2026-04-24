@@ -54,7 +54,7 @@ EOF
 
 sudo sysctl --system
 
-sudo systemctl enable --now bluetooth docker.service containerd.service ufw fail2ban greetd
+sudo systemctl enable --now bluetooth docker.service containerd.service fail2ban greetd
 
 
 sudo groupadd -f docker
