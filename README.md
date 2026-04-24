@@ -1,2 +1,2 @@
 # setup
-Base setup script
+Base setup script - removed ansible dependencies
