@@ -2,8 +2,8 @@
 
 set -euo pipefail
 
-cp -rfT .ssh/ $HOME/ 
-gpg --decrypt $HOME/.ssh/id_rsa.gpg > $HOME/.ssh/id_rsa
+cp -rfT .ssh/ "$HOME/"
+gpg --decrypt "$HOME/.ssh/id_rsa.gpg" > "$HOME/.ssh/id_rsa"
 
 sudo -v
 
@@ -33,11 +33,9 @@ popd
 yay -S --needed --noconfirm \
 	swaylock-effects autotiling 
 
-sudo rm -rf $HOME/.dotfiles
+sudo rm -rf "$HOME/.dotfiles"
 git clone --recursive git@github.com:viktorybloom/dotfiles.git "$HOME/.dotfiles"
 bash "$HOME/.dotfiles/arch"
-
-sudo systemctl enable --now bluetooth docker.service containerd.service ufw fail2ban greetd
 
 # Harden this .....
 sudo ufw --force reset
@@ -55,6 +53,9 @@ net.ipv4.conf.default.accept_source_route = 0
 EOF
 
 sudo sysctl --system
+
+sudo systemctl enable --now bluetooth docker.service containerd.service ufw fail2ban greetd
+
 
 sudo groupadd -f docker
 sudo usermod -aG docker $USER
