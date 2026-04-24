@@ -40,7 +40,7 @@ yay -S --needed --noconfirm \
 
 sudo tee /etc/greetd/config.toml >/dev/null <<EOF
 [terminal]
-vt = 1
+vt = 7
 
 [default_session]
 command = "tuigreet --remember --cmd sway"
