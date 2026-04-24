@@ -15,7 +15,7 @@ sudo pacman -S --needed --noconfirm \
 	base-devel cmake pkgconf docker docker-compose lua unzip libtool gettext htop \
 	ccache go lsof ninja python-pip moreutils clang less zig  \
 	platformio-core \
-	sway greetd swaybg dmenu wofi waybar \
+	sway greetd greetd-tuigreet swaybg dmenu wofi waybar \
 	brightnessctl pavucontrol grim slurp xorg-xwayland bluez-utils dosfstools sshpass \
 	pulseaudio-alsa pulseaudio-bluetooth pulseaudio-equalizer pulseaudio-jack alsa-utils playerctl pacman-contrib \
 	ttf-ubuntu-mono-nerd \
@@ -33,15 +33,15 @@ makepkg -si --noconfirm
 popd
 
 yay -S --needed --noconfirm \
-	swaylock-effects autotiling greetd-tuigreet
+	swaylock-effects autotiling
 
 sudo tee /etc/greetd/config.toml >/dev/null <<EOF
 [terminal]
 vt = 1
 
 [default_session]
-
-command = "tuigreet --cmd sway --user $USER"
+command = "tuigreet --remember --cmd sway"
+user = "$USER"
 EOF
 
 sudo rm -rf "$HOME/.dotfiles"
