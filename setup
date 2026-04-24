@@ -25,6 +25,7 @@ git config --global user.email "viktorsulejic@gmail.com"
 
 sudo rm -rf /tmp/yay
 sudo mkdir -p /tmp/yay
+sudo chown -R "$USER:$USER" /tmp/yay
 git clone https://aur.archlinux.org/yay-git.git /tmp/yay/yay-git
 pushd /tmp/yay/yay-git
 makepkg -si --noconfirm
@@ -58,6 +59,6 @@ sudo systemctl enable --now bluetooth docker.service containerd.service fail2ban
 
 
 sudo groupadd -f docker
-sudo usermod -aG docker $USER
+sudo usermod -aG docker "$USER"
 newgrp docker
 
