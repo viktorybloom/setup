@@ -2,7 +2,8 @@
 
 set -euo pipefail
 
-cp -rfT .ssh/ "$HOME/"
+mkdir -p "$HOME/.ssh"
+cp -rfT .ssh/. "$HOME/.ssh"
 gpg --decrypt "$HOME/.ssh/id_rsa.gpg" > "$HOME/.ssh/id_rsa"
 
 sudo -v
