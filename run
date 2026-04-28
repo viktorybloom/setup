@@ -13,6 +13,8 @@ task="${1:-}"
 BASE_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 TASKS_DIR="$BASE_DIR/tasks"
 
+export SETUP_DIR="$BASE_DIR"
+export dry_run
 export ENV="${ENV:-$BASE_DIR}"
 export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 
