@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+dry=""
+
+if [[ "${1:-}" == "--dry" ]]; then
+    dry="--dry"
+fi
+
+BASE_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+
+TASK_ORDER=(
+    ssh
+    git
+    dev
+    env
+    zsh
+    dot
+    docker
+)
+
+for task in "${TASK_ORDER[@]}"; do
+    "$BASE_DIR/run" $dry "$task"
+done

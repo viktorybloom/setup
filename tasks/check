@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "setup dir: $SETUP_DIR"
+echo "env dir:   $ENV"
+echo "xdg dir:   $XDG_CONFIG_HOME"
+echo "dry run:   $dry_run"

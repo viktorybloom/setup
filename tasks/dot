@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+pushd $HOME
+sudo rm -r .dotfiles/
+git clone --recursive git@github.com:viktorybloom/.dotfiles.git
+bash .dotfiles/arch
+popd

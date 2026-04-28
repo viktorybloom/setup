@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+sudo rm -rf "$HOME/.ssh"
+mkdir -p "$HOME/.ssh"
+cp -rfT .ssh/. "$HOME/.ssh"
+gpg --decrypt ".ssh/id_rsa.gpg" > "$HOME/.ssh/id_rsa"
+chmod 700 "$HOME/.ssh"
+chmod 600 "$HOME/.ssh/id_rsa"

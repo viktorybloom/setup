@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+sudo pacman -S --needed --noconfirm \
+        nvim stow tmux ghostty fzf tldr wget xclip curl git tree ripgrep fastfetch zsh \
+        base-devel cmake pkgconf docker docker-compose lua unzip libtool gettext htop \
+        ccache go lsof ninja python-pip moreutils clang less zig  \
+        platformio-core \
+        sway greetd greetd-tuigreet swaybg dmenu wofi waybar \
+        brightnessctl pavucontrol grim slurp xorg-xwayland bluez-utils dosfstools sshpass \
+        pipewire pipewire-pulse wireplumber alsa-utils sof-firmware playerctl pacman-contrib \
+        ttf-ubuntu-mono-nerd \
+        ufw fail2ban

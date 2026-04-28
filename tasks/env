@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+sudo pacman -S --needed --noconfirm \
+        ghostty sway greetd greetd-tuigreet swaybg dmenu wofi waybar \
+        brightnessctl pavucontrol grim slurp xorg-xwayland bluez-utils dosfstools \
+        pipewire pipewire-pulse wireplumber alsa-utils sof-firmware playerctl pacman-contrib \
+        ttf-ubuntu-mono-nerd \
+        tlp thermald 
+        
+yay -S --needed --noconfirm \
+        swaylock-effects autotiling zen-browser-bin
+
+
+
+# greetd setup
+sudo tee /etc/greetd/config.toml >/dev/null <<EOF
+[terminal]
+vt = 7
+
+[default_session]
+command = "tuigreet --remember --cmd sway"
+user = "greeter"
+EOF
+
+sudo systemctl disable --now systemd-networkd-wait-online.service #causing annoying boot bug
+
+
+
+
+# Harden this .....
+sudo ufw --force reset
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw --force enable
+
+sudo tee /etc/sysctl.d/99-laptop-network-hardening.conf >/dev/null <<EOF
+net.ipv4.conf.all.rp_filter = 1
+net.ipv4.conf.default.rp_filter = 1
+net.ipv4.conf.all.accept_redirects = 0
+net.ipv4.conf.default.accept_redirects = 0
+net.ipv4.conf.all.accept_source_route = 0
+net.ipv4.conf.default.accept_source_route = 0
+EOF
+
+sudo sysctl --system
+
+
+
+
+sudo systemctl enable --now bluetooth pipewire wireplumber pipewire-pulse fail2ban greetd
+
