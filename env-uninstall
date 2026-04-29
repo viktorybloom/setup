@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+set -euo pipefail
+
+DOTFILES="${DOTFILES:-$HOME/setup/env}"
+
+echo "unstowing everything from: $DOTFILES"
+
+stow -D -d "$DOTFILES" -t "$HOME" .

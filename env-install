@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+set -euo pipefail
+
+DOTFILES="${DOTFILES:-$HOME/setup/env}"
+
+echo "stowing everything from: $DOTFILES"
+
+mkdir -p "$HOME/.config"
+
+stow -d "$DOTFILES" -t "$HOME" .
