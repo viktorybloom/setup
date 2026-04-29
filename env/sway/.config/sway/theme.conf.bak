@@ -1,0 +1,13 @@
+
+# Font
+font pango: UbuntuMono Nerd Font 14 
+
+# Wallpaper
+output * background '~/.dotfiles/wallpaper/fujinight.jpg' fill
+
+# Borders removal.
+for_window [class="^.*"] border pixel 1
+                          # class                 border  backgr. text    indicator child_border
+for_window [class="^.*"] client.focused          #77dd77 #285577 #ffffff #2e9ef4   #285577
+
+

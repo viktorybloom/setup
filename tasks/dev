@@ -3,7 +3,7 @@
 set -euo pipefail
 
 sudo pacman -S --needed --noconfirm \
-        nvim stow tmux ghostty fzf tldr wget xclip curl git tree ripgrep fastfetch zsh \
+        nvim stow tmux ghostty fzf wl-clipboard tldr wget curl git tree ripgrep fastfetch zsh \
         base-devel cmake pkgconf docker docker-compose lua unzip libtool gettext htop \
         ccache go lsof ninja python-pip moreutils clang less zig  \
         platformio-core \

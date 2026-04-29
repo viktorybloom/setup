@@ -1,0 +1,31 @@
+include ./workspace.conf
+include ./theme.conf
+include ./actions.conf
+include ./misc/*
+
+# Autotiling - AUR autotiling
+exec_always autotiling
+
+# Opacity for unfocused windows.
+exec_always ~/.config/sway/scripts/inactive-windows-transparency.py
+
+# Auto lock
+exec_always pkill swayidle; swayidle -w \
+    timeout 600 'swaylock -f -C ~/.config/swaylock/config' \
+    timeout 660 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock -C ~/.config/swaylock/config'
+
+
+
+# Status Bar:
+bar {
+    swaybar_command waybar
+}
+
+# Floating applications
+
+	for_window [app_id="zoom"] floating enable
+
+
+

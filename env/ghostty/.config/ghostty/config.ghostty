@@ -1,0 +1,18 @@
+background = 000000
+background-opacity = 1
+background-blur = false
+confirm-close-surface=false
+font-family = "UbuntuMono Nerd Font"
+font-size = 20
+
+window-padding-x = 10
+window-padding-y = 10 
+
+shell-integration-features = no-cursor,no-sudo,no-title
+gtk-titlebar = false
+
+# keybind = ctrl+d=scroll_page_fractional:0.5
+# keybind = ctrl+u=scroll_page_fractional:-0.5
+
+# Disable Ctrl+Enter fullscreen keybind
+keybind = ctrl+enter=unbind
