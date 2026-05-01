@@ -6,7 +6,5 @@ sudo pacman -S --needed --noconfirm \
         nvim stow tmux fzf wl-clipboard tldr jq wget curl git tree ripgrep fastfetch zsh sshpass \
         base-devel cmake pkgconf lua unzip libtool gettext btop \
         ccache go lsof ninja python-pip moreutils clang less zig  \
-        platformio-core \
-        ufw fail2ban
+        platformio-core\
 
-sudo systemctl enable --now fail2ban ufw

@@ -14,6 +14,7 @@ TASK_ORDER=(
     git
     dev
     env
+    fire
     zsh
     dot
     docker
