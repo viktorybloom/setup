@@ -49,5 +49,5 @@ sudo sysctl --system
 
 
 
-sudo systemctl enable --now bluetooth pipewire wireplumber pipewire-pulse fail2ban greetd
+sudo systemctl enable --now bluetooth pipewire wireplumber pipewire-pulse greetd
 
