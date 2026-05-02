@@ -3,14 +3,14 @@
 set -euo pipefail
 
 sudo pacman -S --needed --noconfirm \
-        ghostty sway greetd greetd-tuigreet swaybg dmenu wofi waybar \
+        ghostty sway swayidle hyprlock greetd greetd-tuigreet swaybg dmenu wofi waybar \
         brightnessctl pavucontrol grim slurp xorg-xwayland bluez-utils dosfstools \
         pipewire pipewire-pulse wireplumber alsa-utils sof-firmware playerctl pacman-contrib \
         ttf-ubuntu-mono-nerd \
         tlp thermald 
         
 yay -S --needed --noconfirm \
-        swaylock-effects autotiling zen-browser-bin
+        autotiling zen-browser-bin
 
 
 

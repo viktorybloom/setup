@@ -11,8 +11,8 @@ exec_always ~/.config/sway/scripts/inactive-windows-transparency.py
 
 # Auto lock
 exec_always pkill swayidle; swayidle -w \
-    timeout 10 'hyprlock' \
-    timeout 660 'swaymsg "output * power off"' \
+    timeout 300 'hyprlock' \
+    timeout 360 'swaymsg "output * power off"' \
     resume 'swaymsg "output * power on"' \
     before-sleep 'hyprlock'
 
