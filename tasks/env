@@ -3,7 +3,7 @@
 set -euo pipefail
 
 sudo pacman -S --needed --noconfirm \
-        ghostty hyprland hypridle hyprpaper hyprlock greetd greetd-tuigreet dmenu wofi waybar \
+        ghostty hyprland hypridle hyprpaper hyprlock xdg-desktop-portal-hyprland greetd greetd-tuigreet dmenu wofi waybar \
         brightnessctl pavucontrol grim slurp xorg-xwayland bluez-utils dosfstools \
         pipewire pipewire-pulse wireplumber alsa-utils sof-firmware playerctl pacman-contrib \
         ttf-ubuntu-mono-nerd \
@@ -20,7 +20,7 @@ sudo tee /etc/greetd/config.toml >/dev/null <<EOF
 vt = 7
 
 [default_session]
-command = "tuigreet --remember --cmd hyprland"
+command = "tuigreet --remember --cmd start-hyprland"
 user = "greeter"
 EOF
 
