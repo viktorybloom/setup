@@ -13,4 +13,4 @@ content_halign=fill
 insensitive=true
 always_parse_args=true
 line_wrap=word
-term=alacritty
+term=ghostty

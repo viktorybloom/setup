@@ -3,14 +3,14 @@
 set -euo pipefail
 
 sudo pacman -S --needed --noconfirm \
-        ghostty sway swayidle hyprlock greetd greetd-tuigreet swaybg dmenu wofi waybar \
+        ghostty hyprland hypridle hyprpaper hyprlock greetd greetd-tuigreet dmenu wofi waybar \
         brightnessctl pavucontrol grim slurp xorg-xwayland bluez-utils dosfstools \
         pipewire pipewire-pulse wireplumber alsa-utils sof-firmware playerctl pacman-contrib \
         ttf-ubuntu-mono-nerd \
         tlp thermald 
         
 yay -S --needed --noconfirm \
-        autotiling zen-browser-bin
+        zen-browser-bin
 
 
 
@@ -20,7 +20,7 @@ sudo tee /etc/greetd/config.toml >/dev/null <<EOF
 vt = 7
 
 [default_session]
-command = "tuigreet --remember --cmd sway"
+command = "tuigreet --remember --cmd hyprland"
 user = "greeter"
 EOF
 

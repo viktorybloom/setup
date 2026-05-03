@@ -10,9 +10,9 @@
 	//"custom/firefox",
 	//"custom/files",
         //"custom/telegram",
-        "sway/workspaces",
-        "sway/mode",
-        "sway/scratchpad"
+        "hyprland/workspaces",
+        "hyprland/submap",
+        "hyprland/window"
     ],
     "modules-center": [
         "sway/window"
