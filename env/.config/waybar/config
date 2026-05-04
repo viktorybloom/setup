@@ -1,71 +1,51 @@
 {
     "layer": "top",
     "position": "bottom",
-    "height": 30,
+    "height": 40,
     "spacing": 4,
 
     "modules-left": [
         "custom/launcher",
-	//"custom/terminal",
-	//"custom/firefox",
-	//"custom/files",
-        //"custom/telegram",
         "hyprland/workspaces",
-        "hyprland/submap",
+        "hyprland/submap"
+    ],
+
+    "modules-center": [
         "hyprland/window"
     ],
-    "modules-center": [
-        "sway/window"
-    ],
+
     "modules-right": [
         "tray",
-	"idle_inhibitor",
         "pulseaudio",
         "network",
-        "cpu",
-        "memory",
-        //"temperature",
+	"custom/bluetooth",
         "backlight",
-        //"keyboard-state",
         "battery",
-        //"battery#bat2",
         "clock"
-        //"custom/bluetooth",
-        //"custom/power"
-    ],
+        ],
 
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "on-click": "activate",
+        "all-outputs": false,
+        "active-only": false,
+        "sort-by-number": true
     },
-    "sway/mode": {
+
+    "hyprland/submap": {
         "format": "<span style=\"italic\">{}</span>"
     },
-    "sway/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
+
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 80
     },
 
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
     "tray": {
-        //"icon-size": 16,
         "spacing": 10
     },
-    "clock": {
+
+   "clock": {
         "format": "{:%e %b %Y %H:%M} ",
 	"tooltip-format": "{calendar}",
             "calendar": {
@@ -125,12 +105,12 @@
         "bat": "BAT2"
     },
     "network": {
-        "interval": 5,
+        "interval": 60,
         "format-wifi": "  {essid} ({signalStrength}%)", // Icon: wifi
         "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
         "format-disconnected": "⚠  Disconnected",
         "tooltip-format": "{ifname}: {ipaddr}",
-        "on-click": "xfce4-terminal -e 'nmtui'",
+        "on-click": "xfce4-terminal -e 'nmtui'"
     },
     "pulseaudio": {
         "scroll-step": 1, // %, can be a float
@@ -152,12 +132,13 @@
         "on-click": "pavucontrol",
         "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
         "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
-	"tooltip": false,
+	"tooltip": false
     },
+    
     "custom/power": {
         "format": "⏻",
         "on-click": "exec ~/.config/sway/scripts/powermenu.sh",
-	"tooltip": false,
+	"tooltip": false
 
     },
     "custom/bluetooth": {
@@ -165,7 +146,7 @@
         "on-click-right": "~/.config/waybar/scripts/wofi-bluetooth.sh",
         "on-click-middle": "~/.config/waybar/scripts/wofi-bluetooth.sh",
         "format": "{icon}",
-        "interval": 15,
+        "interval": 300,
         "format-icons": {
             "on": "<span foreground='#43242B'></span>",
             "off": "<span foreground='#76946A'>󰂲</span>",
@@ -173,30 +154,10 @@
             "connected": ""
         },
         "tooltip-format": "{device_alias} {status}"
-    },
-        "custom/files": {
-        "format": " ",
-        "on-click": "exec thunar",
-        "tooltip": false
-    },
-        "custom/firefox": {
-        "format": " ",
-        "on-click": "exec firefox",
-        "tooltip": false
-    },
-        "custom/telegram": {
-        "format": " ",
-        "on-click": "exec telegram-desktop",
-        "tooltip": false
-    },
-    "custom/terminal": {
-        "format": " ",
-        "on-click": "exec alacritty",
-        "tooltip": false
-    },
+    },    
     "custom/launcher": {
         "format":" ",
         "on-click": "exec wofi -c ~/.config/wofi/config -I",
-        "tooltip": false,
+        "tooltip": false
     }
 }
