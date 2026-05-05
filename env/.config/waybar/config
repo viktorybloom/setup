@@ -27,7 +27,7 @@
     "hyprland/workspaces": {
         "format": "{name}",
         "on-click": "activate",
-        "all-outputs": false,
+        "all-outputs": true,
         "active-only": false,
         "sort-by-number": true
     },
