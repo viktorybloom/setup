@@ -5,7 +5,7 @@
     "spacing": 4,
 
     "modules-left": [
-        "custom/launcher",
+	"custom/launcher",
         "hyprland/workspaces",
         "hyprland/submap"
     ],
@@ -18,7 +18,7 @@
         "tray",
         "pulseaudio",
         "network",
-	"custom/bluetooth",
+	"bluetooth",
         "backlight",
         "battery",
         "clock"
@@ -135,13 +135,13 @@
 	"tooltip": false
     },
     
-    "custom/power": {
+    "power": {
         "format": "⏻",
         "on-click": "exec ~/.config/sway/scripts/powermenu.sh",
 	"tooltip": false
 
     },
-    "custom/bluetooth": {
+    "bluetooth": {
   	"exec": "~/.config/waybar/scripts/wofi-bluetooth.sh --status",
 	"on-click": "~/.config/waybar/scripts/bluetooth-control.sh",
         "on-click-right": "~/.config/waybar/scripts/wofi-bluetooth.sh",
