@@ -28,5 +28,5 @@ EOF
 sudo systemctl disable --now systemd-networkd-wait-online.service #causing annoying boot bug
 
 
-sudo systemctl enable --now tlp thermald bluetooth pipewire wireplumber pipewire-pulse greetd
+sudo systemctl enable --now tlp thermald bluetooth pipewire wireplumber pipewire-pulse tailscale greetd
 
