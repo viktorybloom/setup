@@ -7,7 +7,8 @@ sudo pacman -S --needed --noconfirm \
         brightnessctl pavucontrol grim slurp xorg-xwayland bluez-utils dosfstools \
         pipewire pipewire-pulse wireplumber alsa-utils sof-firmware playerctl pacman-contrib \
         ttf-ubuntu-mono-nerd \
-        tlp thermald 
+        tlp thermald \
+	tailscale
         
 yay -S --needed --noconfirm \
         zen-browser-bin
